@@ -19,9 +19,9 @@ That is the big benefit of pointers: they allow you to point to a potentially la
 Support for pointers exists in your computer's hardware, where it is known as indirect addressing.
 
 In Python, you don't manipulate pointers directly, unlike in some other languages, such as C or Pascal. This has led some people to think that pointers aren't used in Python. Nothing could be further from the truth. Consider this assignment in the Python interactive shell:
-'''
-    >>> s = set()
-	'''
+
+  >  >>> s = set()
+	
 	
 We would normally say that s is a variable of the type set. That is, s is a set. This is not strictly true, however. The variable s is rather a reference (a "safe" pointer) to a set. The set constructor creates a set somewhere in memory and returns the memory location where that set starts. This is what gets stored in s.
 

@@ -46,6 +46,7 @@ Write a Python program to sort a list of elements using the bubble sort algorith
 Note : According to Wikipedia &quot;Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller elements &quot;bubble&quot; to the top of the list. Although the algorithm is simple, it is too slow and impractical for most problems even when compared to insertion sort. It can be practical if the input is usually in sort order but may occasionally have some out-of-order elements nearly in position.
 
 **Step by step pictorial presentation :**
+![image](https://user-images.githubusercontent.com/19671036/60605769-bc798a00-9d7f-11e9-8382-574f1ac6e6c4.png)
 
 ##
 # Merge Sort

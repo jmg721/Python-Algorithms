@@ -2,9 +2,9 @@
 You will have already seen lists in Python. They are convenient and powerful. Normally, any time you need to store something in a list, you use python's built-in list implementation. In this chapter, however, we are more interested in understanding how lists work. So we are going to study list internals. As you will notice, there are different types of lists.
 
 Python's list implementation is designed to be powerful and to encompass several different use cases. We are going to be a bit more strict in our definition of what a list is. The concept of a node is very important to lists. We shall discuss them in this chapter, but this concept will, in different forms, come back throughout the rest of the book.
-```
-## The focus of this Lesson will be the following:
 
+## The focus of this Lesson will be the following:
+```
 -Understand pointers in Python
 -Treating the concept of nodes
 -Implementing singly, doubly, and circularly linked lists

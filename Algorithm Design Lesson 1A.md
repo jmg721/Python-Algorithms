@@ -49,6 +49,7 @@ In design and analysis of algorithms, usually the second method is used to descr
 Writing  **step numbers** , is optional.
 
 We design an algorithm to get a solution of a given problem. A problem can be solved in more than one ways.
+![image](https://user-images.githubusercontent.com/19671036/60600466-cd250280-9d75-11e9-8c12-b533f7e44677.png)
 
  
 Hence, many solution algorithms can be derived for a given problem. The next step is to analyze those proposed solution algorithms and implement the best suitable solution.

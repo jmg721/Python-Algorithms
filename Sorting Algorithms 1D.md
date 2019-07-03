@@ -51,6 +51,8 @@ Note : According to Wikipedia &quot;Bubble sort, sometimes referred to as sinkin
 ##
 # Merge Sort
 
+![image](https://user-images.githubusercontent.com/19671036/60606135-66591680-9d80-11e9-96a9-e588d887d4e2.png)
+
 Merge sort first divides the array into equal halves and then combines them in a sorted manner.
 
 def merge\_sort(unsorted\_list):
@@ -113,6 +115,8 @@ When the above code is executed, it produces the following result −
 
 ##
 # Insertion Sort
+
+![image](https://user-images.githubusercontent.com/19671036/60606238-9e605980-9d80-11e9-8461-7d8e963af5de.png)
 
 Insertion sort involves finding the right place for a given element in a sorted list. So in beginning we compare the first two elements and sort them by comparing them. Then we pick the third element and find its proper position among the previous two sorted elements. This way we gradually go on adding more elements to the already sorted list by putting them in their proper position.
 

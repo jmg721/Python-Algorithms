@@ -151,6 +151,9 @@ When the above code is executed, it produces the following result −
 ##
 # Shell Sort
 
+![image](https://user-images.githubusercontent.com/19671036/60606385-de274100-9d80-11e9-976d-21fe83bc946d.png)
+
+
 Shell Sort involves sorting elements which are away from ech other. We sort a large sublist of a given list and go on reducing the size of the list until all elements are sorted. The below program finds the gap by equating it to half of the length of the list size and then starts sorting all elements in it. Then we keep resetting the gap until the entire list is sorted.
 
 def shellSort(input\_list):
@@ -191,6 +194,8 @@ When the above code is executed, it produces the following result −
 
 ##
 # Selection Sort
+
+![image](https://user-images.githubusercontent.com/19671036/60606659-60176a00-9d81-11e9-8ae8-4c524968a5b6.png)
 
 In selection sort we start by finding the minimum value in a given list and move it to a sorted list. Then we repeat the process for each of the remaining elements in the unsorted list. The next element entering the sorted list is compared with the existing elements and placed at its correct position. So at the end all the elements from the unsorted list are sorted.
 

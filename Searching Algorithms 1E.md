@@ -1,306 +1,46 @@
-Searching Algorithms
-
-Searching is a very basic necessity when you store data in different data structures. The simplest approach is to go across every element in the data structure and match it with the value you are searching for. This is known as Linear search. It is inefficient and rarely used, but creating a program for it gives an idea about how we can implement some advanced search algorithms.
+## Searching is integral to life - we search for things all the time - or at least I do! As often is the case, just as it is in life, so it is in computer science and searching plays a very important role when it comes to working with data.  a  **search algorithm**  is any algorithm which solves the Search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain. Examples of such structures include but are not limited to a Linked List, an Array data structure, or a Search tree. The appropriate search algorithm often depends on the data structure being searched, but also on any a priori knowledge about the data. Searching also encompasses algorithms that query the data structure, such as the SQL SELECT command.
 
 ##
-# Linear Search
+# Linear Search Algorithm
 
-In this type of search, a sequential search is made over all items one by one. Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data structure.
+The _Linear Search a_lgorithm is a simple algorithm, where each item in the list (starting from the first item) is investigated until the required item is found, or the end of the list is reached.
 
-def linear\_search(values, search\_for):
+The Linear Search algorithm is implemented in Python as follows:
 
-    search\_at =0
+|   | deflinearSearch(item,my\_list):    found =False    position =0    whileposition \&lt; len(my\_list) andnotfound:        ifmy\_list[position] ==item:            found =True        position =position +1    returnfound |
+| --- | --- |
 
-    search\_res =False
+Let&#39;s test the code. Enter the following statement at the end of the Python script above:
 
-# Match the value with each data element
+| | bag =[&#39;book&#39;,&#39;pencil&#39;,&#39;pen&#39;,&#39;note book&#39;,&#39;sharpener&#39;,&#39;rubber&#39;]item =input(&#39;What item do you want to check for in the bag?&#39;)itemFound =linearSearch(item,bag)ifitemFound:    print&#39;Yes, the item is in the bag&#39;else:    print&#39;Oops, your item seems not to be in the bag&#39; |
+| --- | --- |
 
-    while search\_at \&lt; len(values)and search\_res isFalse:
+When you enter the input, make sure it is between single or double quotes (i.e. &#39;pencil&#39;). If you input &#39;pencil&#39;, for instance, you should get the following output:
 
-        if values[search\_at]== search\_for:
+Yes, the item is in the bag
 
-            search\_res =True
+Whereas, if you enter &#39;ruler&#39; as input, you will get the following output:
 
-        else:
+Oops, your item seems not to be in the bag
 
-            search\_at = search\_at +1
+As we can see, Python proves itself again to be a programming language that makes it easy to program algorithmic concepts as we did here, dealing with _sorting_ and _searching_ algorithms.
 
-    return search\_res
+It is important to note that there are other types of sorting and searching algorithms.
 
-l =[64,34,25,12,22,11,90]
+#
+# Binary Search
 
-print(linear\_search(l,12))
+Given a sorted array arr[] of n elements, write a function to search a given element x in arr[].
 
-print(linear\_search(l,91))
+A simple approach is to do [**linear search**](http://quiz.geeksforgeeks.org/linear-search/) **.** The time complexity of above algorithm is O(n). Another approach to perform the same task is using Binary Search.
 
-When the above code is executed, it produces the following result −
+**Binary Search:**  Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
 
-True
+The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n).
 
-False
+We basically ignore half of the elements just after one comparison.
 
-##
-# Interpolation Search
-
-This search algorithm works on the probing position of the required value. For this algorithm to work properly, the data collection should be in a sorted form and equally distributed. Initially, the probe position is the position of the middle most item of the collection.If a match occurs, then the index of the item is returned. If the middle item is greater than the item, then the probe position is again calculated in the sub-array to the right of the middle item. Otherwise, the item is searched in the subarray to the left of the middle item. This process continues on the sub-array as well until the size of subarray reduces to zero.
-
-There is a specific formula to calculate the middle position which is indicated in the program below.
-
-def intpolsearch(values,x ):
-
-    idx0 =0
-
-    idxn =(len(values)-1)
-
-    while idx0 \&lt;= idxn and x \&gt;= values[idx0]and x \&lt;= values[idxn]:
-
-# Find the mid point
-
-        mid = idx0 +\
-
-               int(((float(idxn - idx0)/( values[idxn]- values[idx0]))
-
-                    \*( x - values[idx0])))
-
-# Compare the value at mid point with search value
-
-        if values[mid]== x:
-
-            return&quot;Found &quot;+str(x)+&quot; at index &quot;+str(mid)
-
-        if values[mid]\&lt; x:
-
-            idx0 = mid +1
-
-    return&quot;Searched element not in the list&quot;
-
-l =[2,6,11,19,27,31,45,121]
-
-print(intpolsearch(l,2))
-
-When the above code is executed, it produces the following result −
-
-Found2 at index 0
-
-SEARCH TREE
-
-A Binary Search Tree (BST) is a tree in which all the nodes follow the below-mentioned properties − The left sub-tree of a node has a key less than or equal to its parent node&#39;s key. The right sub-tree of a node has a key greater than to its parent node&#39;s key. Thus, BST divides all its sub-trees into two segments; the left sub-tree and the right sub-tree and can be defined as –
-
-left\_subtree (keys)  ≤  node (key)  ≤  right\_subtree (keys)
-
-### **Search for a value in a B-tree**
-
-Searching for a value in a tree involves comparing the incoming value with the value exiting nodes. Here also we traverse the nodes from left to right and then finally with the parent. If the searched for value does not match any of the exiting value, then we return not found message else the found message is returned.
-
-classNode:
-
-    def \_\_init\_\_(self, data):
-
-        self.left =None
-
-        self.right =None
-
-        self.data = data
-
-# Insert method to create nodes
-
-    def insert(self, data):
-
-        ifself.data:
-
-            if data \&lt;self.data:
-
-                ifself.left isNone:
-
-                    self.left =Node(data)
-
-                else:
-
-                    self.left.insert(data)
-
-            elif data \&gt;self.data:
-
-                ifself.right isNone:
-
-                    self.right =Node(data)
-
-                else:
-
-                    self.right.insert(data)
-
-        else:
-
-            self.data = data
-
-# findval method to compare the value with nodes
-
-    def findval(self, lkpval):
-
-        if lkpval \&lt;self.data:
-
-            ifself.left isNone:
-
-                return str(lkpval)+&quot; Not Found&quot;
-
-            returnself.left.findval(lkpval)
-
-        elif lkpval \&gt;self.data:
-
-            ifself.right isNone:
-
-                return str(lkpval)+&quot; Not Found&quot;
-
-            returnself.right.findval(lkpval)
-
-        else:
-
-            print(str(self.data)+&#39; is found&#39;)
-
-# Print the tree
-
-    defPrintTree(self):
-
-        ifself.left:
-
-            self.left.PrintTree()
-
-        print(self.data),
-
-        ifself.right:
-
-            self.right.PrintTree()
-
-root =Node(12)
-
-root.insert(6)
-
-root.insert(14)
-
-root.insert(3)
-
-print(root.findval(7))
-
-print(root.findval(14))
-
-When the above code is executed, it produces the following result −
-
-7NotFound
-
-14is found
-
-
-
-BINARY TREE
-
-Tree represents the nodes connected by edges. It is a non-linear data structure. It has the following properties.
-
-- One node is marked as Root node.
-- Every node other than the root is associated with one parent node.
-- Each node can have an arbitrary number of child node.
-
-We create a tree data structure in python by using the concept os node discussed earlier. We designate one node as root node and then add more nodes as child nodes. Below is program to create the root node.
-
-### **Create Root**
-
-We just create a Node class and add assign a value to the node. This becomes tree with only a root node.
-
-classNode:
-
-    def \_\_init\_\_(self, data):
-
-        self.left =None
-
-        self.right =None
-
-        self.data = data
-
-    defPrintTree(self):
-
-        print(self.data)
-
-root =Node(10)
-
-root.PrintTree()
-
-When the above code is executed, it produces the following result −
-
-10
-
-### **Inserting into a Tree**
-
-To insert into a tree we use the same node class created above and add a insert class to it. The insert class compares the value of the node to the parent node and decides to add it as a left node or a right node. Finally the Print Tree class is used to print the tree.
-
-classNode:
-
-    def \_\_init\_\_(self, data):
-
-        self.left =None
-
-        self.right =None
-
-        self.data = data
-
-    def insert(self, data):
-
-# Compare the new value with the parent node
-
-        ifself.data:
-
-            if data \&lt;self.data:
-
-                ifself.left isNone:
-
-                    self.left =Node(data)
-
-                else:
-
-                    self.left.insert(data)
-
-            elif data \&gt;self.data:
-
-                ifself.right isNone:
-
-                    self.right =Node(data)
-
-                else:
-
-                    self.right.insert(data)
-
-        else:
-
-            self.data = data
-
-# Print the tree
-
-    defPrintTree(self):
-
-        ifself.left:
-
-            self.left.PrintTree()
-
-        print(self.data),
-
-        ifself.right:
-
-            self.right.PrintTree()
-
-# Use the insert method to add nodes
-
-root =Node(12)
-
-root.insert(6)
-
-root.insert(14)
-
-root.insert(3)
-
-root.PrintTree()
-
-When the above code is executed, it produces the following result −
-
-361214
-
-##
-# Traversing a Tree
-
-The tree can be traversed by deciding on a sequence to visit each node. As we can clearly see we can start at a node then visit the left sub-tree first and right sub-tree next. Or we can also visit the right sub-tree first and left sub-tree next. Accordingly there are different names for these tree traversal methods. We study them in detail in the chapter implementing the tree traversal algorithms here.
+1. Compare x with the middle element.
+2. If x matches with middle element, we return the mid index.
+3. Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.
+4. Else (x is smaller) recur for the left half.

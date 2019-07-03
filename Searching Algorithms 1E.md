@@ -7,13 +7,11 @@ The _Linear Search a_lgorithm is a simple algorithm, where each item in the list
 
 The Linear Search algorithm is implemented in Python as follows:
 
-|   | deflinearSearch(item,my\_list):    found =False    position =0    whileposition \&lt; len(my\_list) andnotfound:        ifmy\_list[position] ==item:            found =True        position =position +1    returnfound |
-| --- | --- |
+![image](https://user-images.githubusercontent.com/19671036/60608214-8ab6f200-9d84-11e9-8311-37ba5c44a776.png)
 
 Let&#39;s test the code. Enter the following statement at the end of the Python script above:
 
-| | bag =[&#39;book&#39;,&#39;pencil&#39;,&#39;pen&#39;,&#39;note book&#39;,&#39;sharpener&#39;,&#39;rubber&#39;]item =input(&#39;What item do you want to check for in the bag?&#39;)itemFound =linearSearch(item,bag)ifitemFound:    print&#39;Yes, the item is in the bag&#39;else:    print&#39;Oops, your item seems not to be in the bag&#39; |
-| --- | --- |
+![image](https://user-images.githubusercontent.com/19671036/60608293-b9cd6380-9d84-11e9-92ea-0b83fb67c511.png)
 
 When you enter the input, make sure it is between single or double quotes (i.e. &#39;pencil&#39;). If you input &#39;pencil&#39;, for instance, you should get the following output:
 
@@ -35,6 +33,8 @@ Given a sorted array arr[] of n elements, write a function to search a given ele
 A simple approach is to do [**linear search**](http://quiz.geeksforgeeks.org/linear-search/) **.** The time complexity of above algorithm is O(n). Another approach to perform the same task is using Binary Search.
 
 **Binary Search:**  Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
+
+![image](https://user-images.githubusercontent.com/19671036/60607432-d9fc2300-9d82-11e9-8fa2-f45a082e09cf.png)
 
 The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n).
 

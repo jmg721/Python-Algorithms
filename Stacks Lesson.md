@@ -10,3 +10,28 @@ Thus, a stack is a last in, first out (LIFO) structure:
 The preceding figure depicts a stack of plates. Adding a plate to the pile is only possible by leaving that plate on top of the pile. To remove a plate from the pile of plates means to remove the plate that is on top of the pile.There are two primary operations that are done on stacks: push and pop. When an element is added to the top of the stack, it is pushed onto the stack. When an element is taken off the top of the stack, it is popped off the stack. Another operation which is used sometimes is peek, which makes it possible to see the element on the stack without popping it off.Stacks are used for a number of things. One very common usage for stacks is to keep track of the return address during function calls. Let's imagine that we have the following little program:
 
 ![image](https://user-images.githubusercontent.com/19671036/60811393-c2db7d80-a154-11e9-83dd-571ac8836a8b.png)
+
+When the program execution gets to the call to a(), it first pushes the address of the following instruction onto the stack, then jumps to a. Inside a, b() is called, but before that, the return address is pushed onto the stack. Once in b() and the function is done, the return address is popped off the stack, which takes us back to a(). When a has completed, the return address is popped off the stack, which takes us back to the print statement.
+
+Stacks are actually also used to pass data between functions. Say you have the following function call somewhere in your code:
+
+![image](https://user-images.githubusercontent.com/19671036/60811613-46956a00-a155-11e9-9527-49bc84a2c520.png)
+
+What is going to happen is that 14, 'eggs', 'ham' and 'spam' will be pushed onto the stack, one at a time:
+
+![image](https://user-images.githubusercontent.com/19671036/60811669-66c52900-a155-11e9-9e19-34dc6f30f5e2.png)
+
+When the code jumps into the function, the values for a, b, c, d will be popped off the stack. The spam element will be popped off first and assigned to d, then "ham" will be assigned to c, and so on:
+
+![image](https://user-images.githubusercontent.com/19671036/60811834-b73c8680-a155-11e9-8842-f0a8b5bcbcd0.png)
+
+Stack implementation
+Now let us study an implementation of a stack in Python. We start off by creating a node class, just as we did in the previous chapter with lists:
+
+![image](https://user-images.githubusercontent.com/19671036/60815909-30d87280-a15e-11e9-9da0-105f5b9a96e5.png)
+
+This should be familiar to you by now: a node holds data and a reference to the next item in a list. We are going to implement a stack instead of a list, but the same principle of nodes linked together still applies.
+
+Now let us look at the stack class. It starts off similar to a singly linked list. We need to know the node at the top of the stack. We would also like to keep track of the number of nodes in the stack. So we will add these fields to
+
+![image](https://user-images.githubusercontent.com/19671036/60815974-49e12380-a15e-11e9-8441-90d82d5d0c18.png)

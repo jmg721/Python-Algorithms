@@ -2,7 +2,9 @@
 Visualizing a Queue is easiest if you think of waiting in line at the bank with a “head” and “tail” on the line. Usually there’s a rope maze that has an entrance at the end and an exit where the tellers are located. You enter the queue by entering the “tail” of this rope maze line, and we’ll call that shift because that’s a common programming word in the Queue data structure. Once you enter the bank line (queue), you can’t just jump the line and leave or else people will get mad. So you wait, and as each person in front of you exits the line you get closer to exiting from the “head.” Once you reach the end then you can exit, and we’ll call that unshift. A Queue is therefore similar to a DoubleLinkedList because you are working from both ends of the data structure.
 ```
  Note: 
-Many times you can find real-world examples of a data structure to help you visualize how it works. You should take the time now to draw these scenarios or actually get a stack of books and test out the operations. How many other real situations can you find that are similar to a Stack and a Queue?
+Many times you can find real-world examples of a data structure to help you visualize how it works. 
+You should take the time now to draw these scenarios or actually get a stack of books and test out the operations. 
+How many other real situations can you find that are similar to a Stack and a Queue?
 
 ```
 ## Queues

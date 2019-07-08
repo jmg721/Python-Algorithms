@@ -14,3 +14,25 @@ See the following example for how to use the FIFO queue:
 
 ![image](https://user-images.githubusercontent.com/19671036/60819695-aa279380-a165-11e9-9eb4-8fd943d6214d.png)
 
+# Creating a FIFO Queue
+
+```
+// Initialize queue
+Syntax: queue.Queue(maxsize)
+
+// Insert Element
+Syntax: Queue.put(data)
+
+// Get And remove the element
+Syntax: Queue.get()
+```
+![image](https://user-images.githubusercontent.com/19671036/60820513-35555900-a167-11e9-95a5-13731484a436.png)
+
+```
+Output:
+
+5
+9
+1
+7
+```

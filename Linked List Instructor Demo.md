@@ -133,7 +133,7 @@ Now list traversal is much simpler and looks a lot better as well. We can comple
  ```
 Notice that since the iter() method yields the data member of the node, our client code doesn't need to worry about that at all.
 
-Deleting nodes
+# Deleting nodes
 Another common operation that you would need to be able to do on a list is to delete nodes. This may seem simple, but we'd first have to decide how to select a node for deletion. Is it going to be by an index number or by the data the node contains? Here we will choose to delete a node by the data it contains.
 
 The following is a figure of a special case considered when deleting a node from the list:
@@ -160,3 +160,21 @@ Here is the implementation of the delete() method may look like:
 ```
  It should take a O(n) to delete a node.
 
+# List search
+We may also need a way to check whether a list contains an item. This method is fairly easy to implement thanks to the iter() method we previously wrote. Each pass of the loop compares the current data to the data being searched for. If a match is found, True is returned, or else False is returned:
+```
+def search(self, data):
+     for node in self.iter():
+         if data == node:
+             return True
+     return False  
+```
+# Clearing a list
+We may want a quick way to clear a list. Fortunately for us, this is very simple. All we do is clear the pointers head and tail by setting them to None:
+```
+def clear(self): 
+       """ Clear the entire list. """ 
+       self.tail = None 
+       self.head = None 
+```
+In one fell swoop, we orphan all the nodes at the tail and head pointers of the list. This has a ripple effect of orphaning all the nodes in between.

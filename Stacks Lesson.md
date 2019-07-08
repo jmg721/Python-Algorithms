@@ -25,7 +25,7 @@ When the code jumps into the function, the values for a, b, c, d will be popped 
 
 ![image](https://user-images.githubusercontent.com/19671036/60811834-b73c8680-a155-11e9-8842-f0a8b5bcbcd0.png)
 
-Stack implementation
+# Stack implementation
 Now let us study an implementation of a stack in Python. We start off by creating a node class, just as we did in the previous chapter with lists:
 
 ![image](https://user-images.githubusercontent.com/19671036/60815909-30d87280-a15e-11e9-9da0-105f5b9a96e5.png)
@@ -35,3 +35,21 @@ This should be familiar to you by now: a node holds data and a reference to the 
 Now let us look at the stack class. It starts off similar to a singly linked list. We need to know the node at the top of the stack. We would also like to keep track of the number of nodes in the stack. So we will add these fields to
 
 ![image](https://user-images.githubusercontent.com/19671036/60815974-49e12380-a15e-11e9-8441-90d82d5d0c18.png)
+
+# Push operation
+The push operation is used to add an element to the top of the stack. Here is an implementation:
+
+![image](https://user-images.githubusercontent.com/19671036/60816065-78f79500-a15e-11e9-9987-6ec1a8ebb331.png)
+
+In the following figure, there is no existing node after creating our new node. Thus self.top will point to this new node. The else part of the if statement guarantees that this happens:
+
+![image](https://user-images.githubusercontent.com/19671036/60816105-97f62700-a15e-11e9-86e1-38afda93ba2f.png)
+
+In a scenario where we have an existing stack, we move self.top so that it points to the newly created node. The newly created node must have its next pointer, pointing to the node that used to be the top node on the stack:
+
+![image](https://user-images.githubusercontent.com/19671036/60816155-b4925f00-a15e-11e9-92d5-193260da1302.png)
+
+
+
+
+

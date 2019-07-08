@@ -41,4 +41,5 @@ The class ERView uses a typical menu-driven loop. You structure the code using s
 
 The class ERModel uses a priority queue to schedule the patients. Its implementation is left as a programming project for you.
 
-
+# STUDENT PERFORMANCE LAB
+Complete the emergency room scheduler application as described in the case study.

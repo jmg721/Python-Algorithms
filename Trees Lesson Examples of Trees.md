@@ -25,7 +25,7 @@ Either way, the result is the tree at the beginning.
 
 # Traversing trees
 Any time you see a new data structure, your first question should be, How do I traverse it? The most natural way to traverse a tree is recursively. For example, if the tree contains integers as cargo, this function returns their sum:
-python ```
+ ```python
 def total(tree):
     if tree == None: return 0
     return total(tree.left) + total(tree.right) + tree.cargo

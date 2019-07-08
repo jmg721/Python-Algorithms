@@ -3,7 +3,8 @@ Visualizing a Queue is easiest if you think of waiting in line at the bank with 
 ```
  Note: 
 Many times you can find real-world examples of a data structure to help you visualize how it works. 
-You should take the time now to draw these scenarios or actually get a stack of books and test out the operations. 
+You should take the time now to draw these scenarios or actually get a 
+stack of books and test out the operations. 
 How many other real situations can you find that are similar to a Stack and a Queue?
 
 ```

@@ -29,10 +29,11 @@ Any time you see a new data structure, your first question should be, How do I t
 def total(tree):
     if tree == None: return 0
     return total(tree.left) + total(tree.right) + tree.cargo
-    ```
+```
+
 The base case is the empty tree, which contains no cargo, so the sum is 0. The recursive step makes two recursive calls to find the sum of the child trees. When the recursive calls complete, we add the cargo of the parent and return the total.
 
-21.3. Expression trees
+# Expression trees
 A tree is a natural way to represent the structure of an expression. Unlike other notations, it can represent the computation unambiguously. For example, the infix expression 1 + 2 * 3 is ambiguous unless we know that the multiplication happens before the addition.
 
 This expression tree represents the same computation:
@@ -41,7 +42,9 @@ The nodes of an expression tree can be operands like 1 and 2 or operators like +
 
 We can build this tree like this:
 
+```
 >>> tree = Tree('+', Tree(1), Tree('*', Tree(2), Tree(3)))
+```
 Looking at the figure, there is no question what the order of operations is; the multiplication happens first in order to compute the second operand of the addition.
 
 Expression trees have many uses. The example in this chapter uses trees to translate expressions to postfix, prefix, and infix. Similar trees are used inside compilers to parse, optimize, and translate programs.

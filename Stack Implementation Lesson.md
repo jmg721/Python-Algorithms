@@ -12,3 +12,8 @@ Once we have got to the end of the statement, we need to do one last check. If t
 
 ![image](https://user-images.githubusercontent.com/19671036/60817723-db05c980-a161-11e9-95c6-0d2ba5abd044.png)
 
+Only the first of the three statements should match. And when we run the code, we get the following output:
+
+![image](https://user-images.githubusercontent.com/19671036/60817828-07b9e100-a162-11e9-99b0-95e7ec0ab840.png)
+
+True, False, False. The code works. In summary, the push and pop operations of the stack data structure attract a O(1). The stack data structure is simply enough but is used to implement a whole range of functionality in the real world. The back and forward buttons on the browser are made possible by stacks. To be able to have undo and redo functionality in word processors, stacks are also used.

@@ -48,3 +48,63 @@ We can build this tree like this:
 Looking at the figure, there is no question what the order of operations is; the multiplication happens first in order to compute the second operand of the addition.
 
 Expression trees have many uses. The example in this chapter uses trees to translate expressions to postfix, prefix, and infix. Similar trees are used inside compilers to parse, optimize, and translate programs.
+
+# Tree traversal¶
+We can traverse an expression tree and print the contents like this:
+```python
+def print_tree(tree):
+    if tree == None: return
+    print tree.cargo,
+    print_tree(tree.left)
+    print_tree(tree.right)
+```
+In other words, to print a tree, first print the contents of the root, then print the entire left subtree, and then print the entire right subtree. This way of traversing a tree is called a preorder, because the contents of the root appear before the contents of the children. For the previous example, the output is:
+```
+>>> tree = Tree('+', Tree(1), Tree('*', Tree(2), Tree(3)))
+>>> print_tree(tree)
++ 1 * 2 3
+```
+This format is different from both postfix and infix; it is another notation called prefix, in which the operators appear before their operands.
+
+You might suspect that if you traverse the tree in a different order, you will get the expression in a different notation. For example, if you print the subtrees first and then the root node, you get:
+```python
+def print_tree_postorder(tree):
+    if tree == None: return
+    print_tree_postorder(tree.left)
+    print_tree_postorder(tree.right)
+    print tree.cargo,
+```
+The result, 1 2 3 * +, is in postfix! This order of traversal is called postorder.
+
+Finally, to traverse a tree inorder, you print the left tree, then the root, and then the right tree:
+```python
+def print_tree_inorder(tree):
+    if tree == None: return
+    print_tree_inorder(tree.left)
+    print tree.cargo,
+    print_tree_inorder(tree.right)
+```
+The result is 1 + 2 * 3, which is the expression in infix.
+
+To be fair, we should point out that we have omitted an important complication. Sometimes when we write an expression in infix, we have to use parentheses to preserve the order of operations. So an inorder traversal is not quite sufficient to generate an infix expression.
+
+Nevertheless, with a few improvements, the expression tree and the three recursive traversals provide a general way to translate expressions from one format to another.
+
+If we do an inorder traversal and keep track of what level in the tree we are on, we can generate a graphical representation of a tree:
+```python
+def print_tree_indented(tree, level=0):
+    if tree == None: return
+    print_tree_indented(tree.right, level+1)
+    print '  ' * level + str(tree.cargo)
+    print_tree_indented(tree.left, level+1)
+```
+The parameter level keeps track of where we are in the tree. By default, it is initially 0. Each time we make a recursive call, we pass level+1 because the child’s level is always one greater than the parent’s. Each item is indented by two spaces per level. The result for the example tree is:
+```
+>>> print_tree_indented(tree)
+    3
+  *
+    2
++
+  1
+```
+If you look at the output sideways, you see a simplified version of the original figure.
